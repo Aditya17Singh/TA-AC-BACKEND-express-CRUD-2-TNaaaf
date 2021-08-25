@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <header class="">
+      <div class="container flex">
+        <a href="/"> Home </a>
+        <span>
+          <button class="btn">
+            <a href="/articles/new"> Add Article </a>
+          </button>
+        </span>
+      </div>
+    </header>
+    <main>
+      <div class="container">
+        <h4><%= article.title %></h4>
+        <h4><%= article.author %></h4>
+        <% article.tags.forEach(t => { %>
+        <span> <%= t %> </span>
+        <% }) %>
+        <p><%= article.description %></p>
+        <h4><%= article.likes ? article.likes : 0 %></h4>
+        <a href="/articles/<%= article.id %>/likes">
+          <button class="btn">Like</button>
+        </a>
+        <h4><%= article.Dislike ? article.Dislike : 0 %></h4>
+        <a href="/articles/<%= article.id %>/Dislike">
+          <button>Dislike</button>
+        </a>
+        <div>
+          <a href="/articles/<%= article.id %>/edit">
+            <button class="btn">Edit</button>
+          </a>
+          <a href="/articles/<%= article.id %>/delete">
+            <button class="btn">Delete</button>
+          </a>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
