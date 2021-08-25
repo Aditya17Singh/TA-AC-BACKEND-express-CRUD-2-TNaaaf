@@ -10,7 +10,7 @@
   <body>
     <header class="">
       <div class="container flex">
-        <a href="/"> Home </a>
+        <a class="home" href="/"> Home </a>
         <span>
           <button class="btn">
             <a href="/articles/new"> Add Article </a>
@@ -20,26 +20,26 @@
     </header>
     <main>
       <div class="container">
-        <h4><%= article.title %></h4>
-        <h4><%= article.author %></h4>
+        <h4 class="title"><%= article.title %></h4>
+        <h4 class="author"><%= article.author %></h4>
         <% article.tags.forEach(t => { %>
-        <span> <%= t %> </span>
+        <span class="tags"> <%= t %> </span>
         <% }) %>
-        <p><%= article.description %></p>
-        <h4><%= article.likes ? article.likes : 0 %></h4>
-        <a href="/articles/<%= article.id %>/likes">
-          <button class="btn">Like</button>
+        <p class="para"><%= article.description %></p>
+        <a class="likes" href="/articles/<%= article.id %>/likes">
+          <button class="">Like</button>
         </a>
-        <h4><%= article.Dislike ? article.Dislike : 0 %></h4>
-        <a href="/articles/<%= article.id %>/Dislike">
+        <span class="span"><%= article.likes ? article.likes : 0 %></span>
+        <a class="dislike" href="/articles/<%= article.id %>/Dislike">
           <button>Dislike</button>
         </a>
+        <span class="span"><%= article.Dislike ? article.Dislike : 0 %></span>
         <div>
-          <a href="/articles/<%= article.id %>/edit">
-            <button class="btn">Edit</button>
+          <a class="edit" href="/articles/<%= article.id %>/edit">
+            <button class="">Edit</button>
           </a>
-          <a href="/articles/<%= article.id %>/delete">
-            <button class="btn">Delete</button>
+          <a class="delete" href="/articles/<%= article.id %>/delete">
+            <button class="">Delete</button>
           </a>
         </div>
       </div>
