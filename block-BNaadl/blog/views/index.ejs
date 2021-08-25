@@ -5,13 +5,25 @@
     <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-    <input type="text" name="description" placeholder="description" />
-    <input type="text" name="tags" placeholder="tags" />
-    <input type="text" name="author" placeholder="author" />
-    <button>
-      <a href=""> like </a>
-    </button>
+    <div>
+      <header class="">
+        <div class="container flex">
+          <a href="/"> Home </a>
+          <span>
+            <button class="btn">
+              <a href="/articles/new"> Add Article </a>
+            </button>
+          </span>
+        </div>
+      </header>
+      <main>
+        <div>
+          <h2>Blog App</h2>
+        </div>
+        <button class="btn center">
+          <a href="/articles"> Go to Articles </a>
+        </button>
+      </main>
+    </div>
   </body>
 </html>

@@ -6,14 +6,15 @@ var logger = require("morgan");
 var mongoose = require("mongoose");
 
 var indexRouter = require("./routes/index");
-var usersRouter = require("./routes/users");
+var articleRouter = require("./routes/article");
+// const { Mongoose } = require('mongoose');
 
-//connect to mongodb
+//connect to the database
 mongoose.connect(
-  "mongodb://localhost/blog",
+  "mongodb://localhost/blog1",
   { useNewUrlParser: true, useUnifiedTopology: true },
   (err) => {
-    console.log("Connected", err ? false : true);
+    console.log(err ? err : "Connected true");
   }
 );
 
@@ -29,8 +30,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use('/', indexRouter);
-app.use("/users", usersRouter);
+app.use("/", indexRouter);
+app.use("/articles", articleRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
